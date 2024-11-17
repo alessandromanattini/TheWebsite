@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AM WEBSITE</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+</head>
+<body>
+    <div style="height: 10px;"></div>
+    <header>
+        <h1 class="titleSecondPage">Alessandro Manattini</h1>
+        <h2 class="subtitleSecondPage">Audio Engineer  |  Software Engineer  |  Producer</h2>
+        <img src="../images/sound.png" alt="Sound" id="sound">
+    </header>
+    
+    <!--<div style="height: 150px;"></div>-->
+    <h1 class="names">Projects</h1>
+    <h2 class="subtitleSecondPage">Hover, Listen and Discover!</h2>
+    <div style="height: 50px;"></div>
+
+    <!-- Container per i thumbnail -->
+    <div class="container">
+        <!-- Primo thumbnail -->
+        <div class="thumbex">
+            <div class="thumbnail" data-audio="../audio/OPASound.mp3">
+                <a href="https://github.com/alessandromanattini/Op-A">
+                    <img src="../thumbnails/OPA.png" alt="OPA">
+                    <span>OP-A</span>
+                </a>
+            </div>
+        </div>
+        <!-- Secondo thumbnail con audio -->
+        <div class="thumbex">
+            <div class="thumbnail" data-audio="../audio/ansalSound.wav">
+                <a href="https://github.com/alessandromanattini/CMLS_ANSAL">
+                    <img src="../thumbnails/ANSAL.png" alt="ANSAL">
+                    <span>ANSAL</span>
+                </a>
+            </div>
+        </div>
+        <!-- Terzo thumbnail senza audio -->
+        <div class="thumbex">
+            <div class="thumbnail" data-audio="../audio/advEolo.mp3">
+                <a href="javascript:void(0)" onclick="document.getElementById('videoModal').style.display='block'">
+                    <img src="../thumbnails/videoAdv.png" alt="soundDesign">
+                    <span>SOUND DESIGN</span>
+                </a>
+            </div>
+        </div>
+        <div class="thumbex">
+            <div class="thumbnail" data-audio="../audio/marsSound.mp3">
+                <a href="https://github.com/alessandromanattini/Mars_AUI">
+                    <img src="../thumbnails/mars.png" alt="astraHarmonica">
+                    <span>MARS</span>
+                </a>
+            </div>
+        </div>
+        <div class="thumbex">
+            <div class="thumbnail" data-audio="../audio/astra.mp3">
+                <a href="https://github.com/alessandromanattini/Astra-Harmonica">
+                    <img src="../thumbnails/astraHarmonica.jpg" alt="astraHarmonica">
+                    <span>ASTRA-H</span>
+                </a>
+            </div>
+        </div>
+        <div class="thumbex">
+            <div class="thumbnail" id="websiteThumbnail" data-audio="../audio/websiteAudio.wav">
+                <a href="https://github.com/alessandromanattini/AM-Website">
+                    <img src="../images/sound1.png" alt="soundDesign">
+                    <span>THE WEBSITE</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal per il video -->
+    <div id="videoModal" style="display:none; position:fixed; z-index:1000; left:0; top:0; width:100%; height:100%; background-color:rgba(0,0,0,0.8);">
+        <span onclick="document.getElementById('videoModal').style.display='none'" style="color:white; cursor:pointer; position:absolute; top:20px; right:30px; font-size:30px;">&times;</span>
+        <video width="80%" height="80%" style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%);" controls>
+            <source src="../video/EOLO.mp4" type="video/mp4">
+            Il tuo browser non supporta il tag video.
+        </video>
+    </div>
+
+    <div style="height: 100px;"></div>
+
+
+    <!-- Swiper Album Carousel -->
+    <div class="albums">
+    <h1 id="secondPage">Songs</h1>
+    <h2 class="subtitleSecondPage">Drag, Swipe and Listen!</h2>
+    <div style="height: 50px;"></div>
+
+    <div class="swiper album-swiper">
+      <div class="swiper-wrapper">
+        <!-- Album Slide -->
+        <div class="swiper-slide" id="payphoneSlide">
+            <a href="https://open.spotify.com/intl-it/track/4kSZ1KQVEw7Otbysz1mXTX?si=4ee761b29fdb43a3">
+                <div class="album-frame">
+                    <img src="../coverSong/payphone.png" alt="Album 1" />
+                </div>
+            </a>
+            <h2 class="title">Payphone</h2>
+            <p class="artists">ALEMA, Robbe</p>
+        </div>
+        <div class="swiper-slide">
+            <a href="https://open.spotify.com/intl-it/album/3tUtCiaP0I6wLJeQO1eOQ4?si=TGewdsdcTzC0vEz06dbiEQ">
+                <div class="album-frame">
+                    <img src="../coverSong/roxanne.png" alt="Album 2" />
+                </div>
+            </a>
+            <h2 class="title">Roxanne</h2>
+            <p class="artists">ALEMA, Gravagerz, Young Jae</p>
+        </div>
+        <div class="swiper-slide">
+            <a href="https://open.spotify.com/intl-it/track/6GpDvAYQ9iGtL5WZCTVzWv?si=5ffac21560d74cef">
+                <div class="album-frame">
+                    <img src="../coverSong/lushlife.png" alt="Album 2" />
+                </div>
+            </a>
+            <h2 class="title">Lush Life</h2>
+            <p class="artists">ALEMA, NCPTN</p>
+        </div>
+        <div class="swiper-slide">
+            <a href="https://open.spotify.com/intl-it/track/6aaLp4f9ladxbIoW8yBPZ6?si=9c2eb6909b83426d">
+                <div class="album-frame">
+                    <img src="../coverSong/goldenticket.png" alt="Album 2" />
+                </div>
+            </a>
+            <h2 class="title">Golden Ticket</h2>
+            <p class="artists">ALEMA</p>
+        </div>
+        <div class="swiper-slide">
+            <a href="https://open.spotify.com/intl-it/track/01IPI6TjP7g9gK0kMu0K3u?si=924f2e2dfc1943b9">
+                <div class="album-frame">
+                    <img src="../coverSong/aboutyou.png" alt="Album 2" />
+                </div>
+            </a>
+            <h2 class="title">Thinking About You</h2>
+            <p class="artists">ALEMA, Gravagerz</p>
+        </div>
+        <div class="swiper-slide">
+            <a href="https://open.spotify.com/intl-it/track/1lHrXPmmfmjA7J1kR1BGYN?si=90d833bd20c04c65">
+                <div class="album-frame">
+                    <img src="../coverSong/tellme.png" alt="Album 2" />
+                </div>
+            </a>
+            <h2 class="title">Tell Me</h2>
+            <p class="artists">ALEMA</p>
+        </div>
+        <div class="swiper-slide">
+            <a href="https://open.spotify.com/intl-it/track/2mDvxIzuxzXy8uRBDkjXr8?si=3a17bd2576074ef4">
+                <div class="album-frame">
+                    <img src="../coverSong/tonight.png" alt="Album 2" />
+                </div>
+            </a>
+            <h2 class="title">Tonight</h2>
+            <p class="artists">ALEMA, NCPTN, Young Jae</p>
+        </div>
+        <div class="swiper-slide">
+            <a href="https://open.spotify.com/intl-it/track/1rvHY2Mlh6jDAdoSB2yTHV?si=2e43288030df4008">
+                <div class="album-frame">
+                    <img src="../coverSong//tonightJ&J.png" alt="Album 2" />
+                </div>
+            </a>
+            <h2 class="title">Tonight (J&J Remix)</h2>
+            <p class="artists">ALEMA, NCPTN, Young Jae, JrStit, JMRA</p>
+        </div>
+        <div class="swiper-slide">
+            <a href="https://open.spotify.com/intl-it/track/110XFaiQOrbzdE5iIhANTU?si=be9ba73ce8f54bbc">
+                <div class="album-frame">
+                    <img src="../coverSong//tonightC&P.png" alt="Album 2" />
+                </div>
+            </a>
+            <h2 class="title">Tonight (C&P Remix)</h2>
+            <p class="artists">ALEMA, NCPTN, Young Jae, Castor & Pullox</p>
+        </div>
+        <div class="swiper-slide">
+            <a href="https://open.spotify.com/intl-it/track/1JYLNXdXId5tXhVDbRP0sK?si=ed9f0173e372427d">
+                <div class="album-frame">
+                    <img src="../coverSong//tonightS&S.png" alt="Album 2" />
+                </div>
+            </a>
+            <h2 class="title">Tonight (S&S Remix)</h2>
+            <p class="artists">ALEMA, NCPTN, Young Jae, Splizz, Slorax</p>
+        </div>
+        <div class="swiper-slide">
+            <a href="https://open.spotify.com/intl-it/track/5AJHhuMqwELS4zJYyNZEL9?si=224c65312da845ac">
+                <div class="album-frame">
+                    <img src="../coverSong//you.png" alt="Album 2" />
+                </div>
+            </a>
+            <h2 class="title">You</h2>
+            <p class="artists">ALEMA</p>
+        </div>
+        <div class="swiper-slide">
+            <a href="https://soundcloud.com/alemamusic/atrya-life-is-all-about-love-radio-edit">
+                <div class="album-frame">
+                    <img src="../coverSong/liaal.png" alt="Album 2" />
+                </div>
+            </a>
+            <h2 class="title">Life Is All About Love</h2>
+            <p class="artists">ALEMA, ATRYA</p>
+        </div>
+        <div class="swiper-slide">
+            <a href="https://open.spotify.com/intl-it/track/4cLcZOjjZZiADhNOy834Yd?si=6cd3cdac91394a83">
+                <div class="album-frame">
+                    <img src="../coverSong/pain.png" alt="Album 2" />
+                </div>
+            </a>
+            <h2 class="title">Your Pain (ATRYA Remix)</h2>
+            <p class="artists">MBP, ALEMA, ATRYA</p>
+        </div>
+        <div class="swiper-slide">
+            <a href="https://soundcloud.com/alemaofficial/buzz-low-thong-song-alema-remix-1">
+                <div class="album-frame">
+                    <img src="../coverSong/thong.png" alt="Album 2" />
+                </div>
+            </a>
+            <h2 class="title">Thong Song (ALEMA Remix)</h2>
+            <p class="artists">Buzz Low, ALEMA</p>
+        </div>
+        <div class="swiper-slide">
+            <a href="https://soundcloud.com/alemaofficial/yves-v-ilkay-sencan-not-so-bad-featemie-alema-remix">
+                <div class="album-frame">
+                    <img src="../coverSong/notSoBad.png" alt="Album 2" />
+                </div>
+            </a>
+            <h2 class="title">Not So Bad (ALEMA Remix)</h2>
+            <p class="artists">Yves V, Ilkay Senkan, Emie, ALEMA</p>
+        </div>
+            
+      </div>
+      <!-- Add Pagination if needed -->
+      <div style="height: 200px;"></div>
+      <div class="swiper-pagination"></div>
+      <!-- Add Navigation if needed 
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>-->
+    </div>
+    </div>
+
+    <div style="height: 50px;"></div>
+
+    <h1 class="names">Close your eyes ...</h1>
+    <h2 class="subtitleSecondPage"> . . .  and imagine</h2>
+    <div style="height: 100px;"></div>
+    <div class="waveContainer">
+        <button id="playPauseBtn">Start Imaging</button>
+        <div id="waveform"></div>
+    </div>
+
+    <div style="height: 150px;"></div>
+    
+    <div class="containerCareer"> 
+        <h1 class="names">Career</h1> 
+        <h2 class="subtitleSecondPage" id="subtitleCareer">Education, Certifications, and Beyond.</h2>
+        
+        <div class="thumbex">
+            <div class="thumbnail" id="careerThumbnail" data-audio="../audio/careerSound.mp3">
+                <a href="https://www.linkedin.com/in/alessandro-manattini-a17538244/">
+                    <img src="../thumbnails/linkPic.png" alt="Career">
+                    <span></span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div style="height: 400px;"></div>
+    <h1 class="names">Are you ready to jump into the Future?</h1>
+    <div style="height: 100px;"></div>
+
+    <div class="center-container">
+        <button class="shiny-cta" id="shinyButton">
+            <span>Jump into the Future</span>
+        </button>
+    </div>
+
+    <div style="height: 200px;"></div>
+
+<!-- Magic Card Container 
+    <div class="magic-card-container">
+        <div class="card">
+        Magic Card
+        </div>
+    </div>-->
+
+    <!--Elemento audio nascosto -->
+    <audio id="thumbnailAudio"></audio>
+
+    <!-- Swiper JS and main script -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/wavesurfer.js"></script>
+    <script src="main.js"></script>
+    
+</body>
+</html>

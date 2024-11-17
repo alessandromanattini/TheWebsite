@@ -1,0 +1,519 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400');
+@import url("https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,500&display=swap");
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+html, body {
+    min-height: 100vh;
+    overflow-y: auto;
+    font-family: 'Raleway', sans-serif;
+    background: linear-gradient(135deg, #000a09 0%, #000000 100%);
+    overflow-x: hidden;
+}
+
+header {
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+.title-container {
+    position: relative; /* Posizione relativa per il contenitore */
+    text-align: center; /* Centra il contenuto, se necessario */
+}
+
+#titleImage {
+    position: absolute; /* Posizione assoluta per sovrapporre */
+    width : 90%; /* Larghezza dell'immagine */
+    top: 300px; /* Regola la posizione verticale */
+    left: 50%; /* Centra orizzontalmente */
+    transform: translateX(-50%); /* Centra perfettamente */
+    z-index: 1; /* Assicurati che sia sopra l'immagine del suono */
+}
+
+#sound {
+    width : 100%; /* Larghezza dell'immagine */
+    top: -100px;
+    display: block; /* Assicura che l'immagine del suono sia un blocco */
+    margin: 0 auto; /* Centra l'immagine orizzontalmente */
+    opacity: 0.5; /* Se desideri rendere l'immagine del suono semi-trasparente */
+}
+
+.subtitleSecondPage{
+    margin-top: 20px;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+}
+
+#subtitleCareer{
+    margin-top: -5px;
+}
+
+.names{
+    color: white;
+    font-size: 70px;
+    text-align: center;
+}
+
+header h1 img {
+    margin-top: 20%;
+    width: 100%;
+    height: auto;
+    display: inline-block;
+}
+
+/* Layout del contenitore delle thumbnail */
+.container {
+    display: grid; /* Usa grid per layout */
+    grid-template-columns: repeat(3, 1fr); /* Tre colonne */
+    gap: 20px; /* Spaziatura tra le miniature */
+    justify-items: center; /* Centra gli elementi orizzontalmente */
+    /*align-items: center;  Centra gli elementi verticalmente */
+    padding: 10px; /* Padding per il contenitore */
+}
+
+.containerCareer{
+    display: grid; /* Usa grid per layout */
+    grid-template-columns: repeat(1, 1fr); /* Tre colonne */
+    gap: 20px; /* Spaziatura tra le miniature */
+    justify-items: center; /* Centra gli elementi orizzontalmente */
+    align-items: center;
+    padding: 10px; /* Padding per il contenitore */
+}
+
+/* Stile per ogni thumbnail */
+.thumbex {
+    margin: 1%;
+    margin-bottom: 75px;
+    width: 100%;
+    max-width: 300px;
+    height: 300px;
+    overflow: hidden;
+    outline: 2px solid rgba(255, 255, 255, 0);
+    outline-offset: -15px;
+    box-shadow: 5px 10px 40px 5px rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 255, 0);
+}
+
+.thumbnail {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    opacity: 0.88;
+    transition: all 0.4s ease-out;
+}
+
+.thumbnail img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 115%;
+    width: auto;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.thumbnail span {
+    position: absolute;
+    top: calc(150px - 40px);
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px 30px;
+    margin: 0 60px;
+    text-align: center;
+    font-size: 24px;
+    color: white;
+    font-weight: 300;
+    z-index: 2;
+    transition: all 0.3s ease-out;
+}
+
+#careerThumbnail span{
+    background: rgba(0, 0, 0, 0);
+}
+
+#careerThumbnail:hover{
+    transform: scale(1.23);
+}
+
+.thumbnail:hover {
+    transform: scale(1.15);
+    text-align: center;
+    opacity: 1;
+}
+
+#websiteThumbnail:hover{
+    transform: scale(1.1);
+}
+
+.thumbnail:hover span {
+    opacity: 0;
+}
+
+/* Stile per l'immagine HOLE a schermo intero */
+.full-screen-hole {
+    margin-top: 10%;
+    width: 100%;
+    height: 100vh; /* Assicura che l'elemento occupi l'altezza dell'intera finestra */
+    background-color: black;
+    opacity: 0; /* Nasconde inizialmente l'immagine */
+    transition: opacity 3s; /* Aggiunge una transizione per l'opacità */
+    position: relative; /* Mantiene l'elemento nel flusso del documento */
+    z-index: 0;
+}
+
+.full-screen-hole.visible {
+    opacity: 1; /* Rende visibile l'immagine quando la classe 'visible' è presente */
+}
+
+.full-screen-hole img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.full-screen-hole #holeButton {
+    position: absolute;
+    top: 50%;
+    left: 56.75%;
+    height: 50%;
+    width: 25%;
+    border-radius : 50%;
+    transform: translate(-50%, -50%); /* Centra il bottone */
+    /*padding: 15px 30px;*/
+    font-size: 24px;
+    background-color: rgba(255, 255, 255, 0);
+    color: black;
+    border: none;
+    cursor: pointer;
+    z-index: 1; /* Assicura che il bottone sia sopra l'immagine */
+    transition: background-color 5s ease, transform 5s ease;
+}
+
+
+.full-screen-hole.zoom-in {
+    animation: zoomIn 5s forwards;
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+    
+}
+
+
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    width: auto; /* Let Swiper control the width */
+    flex-shrink: 0; /* Prevent slides from shrinking */
+}
+
+#payphoneSlide{
+    cursor:pointer;
+}
+
+.albums {
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: auto;
+}
+
+.albums h1 {
+    text-align: center;
+    color: white;
+    font-size: 70px;
+  }
+
+.album-frame img {
+    width: 100%;
+    height: auto;
+}
+
+.title{
+    color: white;
+    font-size: 30px;
+    text-align: center;
+}
+
+.artists{
+    color: white;
+    font-size: 15px;
+    text-align: center;
+}
+
+.titleSecondPage{
+    color: white;
+    font-size: 70px;
+    text-align: center;
+}
+.swiper-pagination-bullet-active{
+    color: rgba(255, 255, 255, 0);
+}
+
+:root {
+    --swiper-pagination-color: rgba(255, 255, 255, 0); /* Active bullet color */
+    --swiper-pagination-bullet-inactive-color: #ffffff00; /* Inactive bullets color */
+}
+
+.waveContainer {
+    display: flex; /* Use flexbox for layout */
+
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Align items to the left */
+    color: white;
+}
+
+#waveform {
+    width: 60%; /* Adjust width as needed */
+    height: 100px;
+    margin-left: 100px; /* Add some space between the button and the waveform */
+}
+
+#playPauseBtn {
+    border-radius: 5px;
+    border: 1px solid white;
+    color: white;
+    font-size : 26px;
+    background-color: rgba(255, 255, 255, 0);
+    padding: 10px 20px;
+    font-family: 'Raleway', sans-serif;
+    height: 75px;
+    width: 150px;
+    font-size: 16px;
+    margin-right: 10px; /* Optional: Add space to the right of the button */
+}
+
+#playPauseBtn:hover {
+    color: rgba(255, 255, 255, 0.714);
+    border: 1px solid rgba(255, 255, 255, 0.714);
+    transform: scale(1.015);
+    transform: scaleZ(1.015);
+}
+
+/*CHANGE THE COLOR HERE*/
+
+:root {
+    --shiny-cta-bg: #000000;
+    --shiny-cta-bg-subtle: #1a1818;
+    --shiny-cta-fg: #ffffff;
+    --shiny-cta-highlight: rgb(84, 37, 202);
+    --shiny-cta-highlight-subtle: #ef7cfa;
+  }
+
+  .center-container {
+    position: absolute; /* Posizione fissa */
+    left: 50%; /* Centra orizzontalmente */
+    transform: translate(-50%, -50%); /* Trasla per centrare perfettamente */
+    z-index: 10; /* Assicurati che sia sopra gli altri elementi */
+}
+  
+  @property --gradient-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+  
+  @property --gradient-angle-offset {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+  
+  @property --gradient-percent {
+    syntax: "<percentage>";
+    initial-value: 5%;
+    inherits: false;
+  }
+  
+  @property --gradient-shine {
+    syntax: "<color>";
+    initial-value: white;
+    inherits: false;
+  }
+  
+  .shiny-cta {
+    --animation: gradient-angle linear infinite;
+    --duration: 3s;
+    --shadow-size: 2px;
+    isolation: isolate;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    outline-offset: 4px;
+    padding: 1.25rem 2.5rem;
+    font-family: inherit;
+    font-size: 1.125rem;
+    line-height: 1.2;
+    border: 1px solid transparent;
+    border-radius: 360px;
+    color: var(--shiny-cta-fg);
+    background: linear-gradient(var(--shiny-cta-bg), var(--shiny-cta-bg))
+        padding-box,
+      conic-gradient(
+          from calc(var(--gradient-angle) - var(--gradient-angle-offset)),
+          transparent,
+          var(--shiny-cta-highlight) var(--gradient-percent),
+          var(--gradient-shine) calc(var(--gradient-percent) * 2),
+          var(--shiny-cta-highlight) calc(var(--gradient-percent) * 3),
+          transparent calc(var(--gradient-percent) * 4)
+        )
+        border-box;
+    box-shadow: inset 0 0 0 1px var(--shiny-cta-bg-subtle);
+  
+    &::before,
+    &::after,
+    span::before {
+      content: "";
+      pointer-events: none;
+      position: absolute;
+      inset-inline-start: 50%;
+      inset-block-start: 50%;
+      translate: -50% -50%;
+      z-index: -1;
+    }
+  
+    &:active {
+      translate: 0 1px;
+    }
+  }
+  
+  /* Dots pattern */
+  .shiny-cta::before {
+    --size: calc(100% - var(--shadow-size) * 3);
+    --position: 2px;
+    --space: calc(var(--position) * 2);
+    width: var(--size);
+    height: var(--size);
+    background: radial-gradient(
+        circle at var(--position) var(--position),
+        white calc(var(--position) / 4),
+        transparent 0
+      )
+      padding-box;
+    background-size: var(--space) var(--space);
+    background-repeat: space;
+    mask-image: conic-gradient(
+      from calc(var(--gradient-angle) + 45deg),
+      black,
+      transparent 10% 90%,
+      black
+    );
+    border-radius: inherit;
+    opacity: 0.4;
+    z-index: -1;
+  }
+  
+  /* Inner shimmer */
+  .shiny-cta::after {
+    --animation: shimmer linear infinite;
+    width: 100%;
+    aspect-ratio: 1;
+    background: linear-gradient(
+      -50deg,
+      transparent,
+      var(--shiny-cta-highlight),
+      transparent
+    );
+    mask-image: radial-gradient(circle at bottom, transparent 40%, black);
+    opacity: 0.6;
+  }
+  
+  .shiny-cta span {
+    z-index: 1;
+  
+    &::before {
+      --size: calc(100% + 1rem);
+      width: var(--size);
+      height: var(--size);
+      box-shadow: inset 0 -1ex 2rem 4px var(--shiny-cta-highlight);
+      opacity: 0;
+    }
+  }
+  
+  /* Animate */
+  .shiny-cta {
+    --transition: 800ms cubic-bezier(0.25, 1, 0.5, 1);
+    transition: var(--transition);
+    transition-property: --gradient-angle-offset, --gradient-percent,
+      --gradient-shine;
+  
+    &,
+    &::before,
+    &::after {
+      animation: var(--animation) var(--duration),
+        var(--animation) calc(var(--duration) / 0.4) reverse paused;
+      animation-composition: add;
+    }
+  
+    span::before {
+      transition: opacity var(--transition);
+      animation: calc(var(--duration) * 1.5) breathe linear infinite;
+    }
+  }
+  
+  .shiny-cta:is(:hover, :focus-visible) {
+    --gradient-percent: 20%;
+    --gradient-angle-offset: 95deg;
+    --gradient-shine: var(--shiny-cta-highlight-subtle);
+  
+    &,
+    &::before,
+    &::after {
+      animation-play-state: running;
+    }
+  
+    span::before {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes gradient-angle {
+    to {
+      --gradient-angle: 360deg;
+    }
+  }
+  
+  @keyframes shimmer {
+    to {
+      rotate: 360deg;
+    }
+  }
+  
+  @keyframes breathe {
+    from,
+    to {
+      scale: 1;
+    }
+    50% {
+      scale: 1.2;
+    }
+  }
+
+.fade-out {
+    opacity: 0; /* Imposta l'opacità a 0 per nascondere l'elemento */
+    transition: opacity 1s ease; /* Aggiunge una transizione per l'opacità */
+    pointer-events: none; /* Disabilita gli eventi del mouse durante la dissolvenza */
+}
