@@ -33,8 +33,8 @@ header h1 {
 
 #titleImage {
     position: absolute; /* Posizione assoluta per sovrapporre */
-    width : 90%; /* Larghezza dell'immagine */
-    top: 300px; /* Regola la posizione verticale */
+    width : 50%; /* Larghezza dell'immagine */
+    top: 275px; /* Regola la posizione verticale */
     left: 50%; /* Centra orizzontalmente */
     transform: translateX(-50%); /* Centra perfettamente */
     z-index: 1; /* Assicurati che sia sopra l'immagine del suono */
@@ -112,10 +112,12 @@ header h1 img {
     height: 100%;
     opacity: 0.88;
     transition: all 0.4s ease-out;
+    border : 1px solid rgba(255, 255, 255, 0.496);
 }
 
 .thumbnail img {
     position: absolute;
+    opacity: 0.2;
     left: 50%;
     top: 50%;
     height: 115%;
@@ -124,18 +126,22 @@ header h1 img {
     z-index: 1;
 }
 
+.thumbnail:hover img {
+    opacity: 1;
+}
+
 .thumbnail span {
     position: absolute;
     top: calc(150px - 40px);
     left: 0;
     right: 0;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0);
     padding: 10px 30px;
     margin: 0 60px;
     text-align: center;
     font-size: 24px;
     color: white;
-    font-weight: 300;
+    font-weight: bold;
     z-index: 2;
     transition: all 0.3s ease-out;
 }
@@ -152,6 +158,7 @@ header h1 img {
     transform: scale(1.15);
     text-align: center;
     opacity: 1;
+    border : 1px solid white;
 }
 
 #websiteThumbnail:hover{
@@ -236,7 +243,7 @@ header h1 img {
 }
 
 .albums {
-    max-width: 1150px;
+    max-width: 80%;
     margin: 0 auto;
     padding: auto;
 }

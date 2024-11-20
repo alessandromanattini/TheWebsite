@@ -1,4 +1,4 @@
-const transitionAudio = new Audio('audio/holeTransition.mp3');
+const transitionAudio = new Audio('audio/websiteAudio.wav');
 
 // Seleziona tutti i thumbnail
 var thumbnails = document.querySelectorAll('.thumbnail');
@@ -74,11 +74,11 @@ if(holeButton){
         // Aggiungi la classe per l'effetto di zoom-in
         holeImageContainer.classList.add('zoom-in');
         document.body.style.overflow = 'hidden'; // Rimuovi lo scroll
-    
+        document.body.classList.add('fade-out');
         // Dopo l'animazione, reindirizza l'utente
         setTimeout(function() {
             window.location.href = 'index2.html'; // Sostituisci con l'URL della tua pagina
-        }, 5000); // 5000ms corrispondono alla durata dell'animazione CSS
+        }, 3000); // 5000ms corrispondono alla durata dell'animazione CSS
     });
 }
 
@@ -87,7 +87,7 @@ if(holeButton){
 
 console.log('Initializing Swiper...');
 var albumSwiper = new Swiper('.album-swiper', {
-    slidesPerView: 3, // Number of slides visible
+    slidesPerView: 5, // Number of slides visible
     spaceBetween: 30, // Space between slides in px
     centeredSlides: true,
     loop: true,

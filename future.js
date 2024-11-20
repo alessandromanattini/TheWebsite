@@ -87,7 +87,7 @@ let isParticleSoundPlaying = false;
 // Parametri configurabili
 const config = {
     particleCount: 23000, // Considera di ridurlo per migliorare le prestazioni
-    textArray: ["Audio.", "Engineering.", "Science.", "Future."],
+    textArray: ["Audio.", "Engineering.", "Music.", "Future."],
     mouseRadius: 0.1,
     particleSize: 2,
     forceMultiplier: 0.001,
@@ -487,7 +487,7 @@ window.addEventListener('scroll', function() {
         }
     }
 
-    // Gestione suono a 700px
+    // Gestione suono a 1500px
     if (currentScroll > 1500) {
         if (!hasPlayedScrollSound1500) {
             scrollSounds[1500].play().catch(function(error) {
