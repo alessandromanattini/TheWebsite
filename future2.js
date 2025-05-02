@@ -16,6 +16,8 @@ if (!window.AudioContext && !window.webkitAudioContext) {
 const AudioContext = window.AudioContext || window.webkitAudioContext;
 const audioCtx = new AudioContext();
 
+
+
 // ------------------- FUNZIONI DI FADE-IN E FADE-OUT ------------------- //
 
 // Funzione per eseguire il fade-in di un audio
@@ -62,7 +64,7 @@ function fadeOut(audioObj, duration) {
 
 // Carica i file audio per le particelle
 let particleAudioBuffer;
-const particleAudioUrl = 'audio/wordSound.wav'; // Percorso corretto
+const particleAudioUrl = '../audio/wordSound.wav'; // Percorso corretto
 
 fetch(particleAudioUrl)
     .then(response => response.arrayBuffer())
@@ -76,10 +78,24 @@ fetch(particleAudioUrl)
 // ------------------- INIZIALIZZAZIONE DEGLI AUDIO ------------------- //
 
 // Definisci gli oggetti Audio per ambienceWS, bassWS e arpWS
-const ambienceWS = new Audio('audio/ambienceWS.mp3'); // Assicurati che il percorso sia corretto
-const bassWS = new Audio('audio/bassWS.mp3');         // Assicurati che il percorso sia corretto
-const arpWS = new Audio('audio/arpWS.mp3');           // Assicurati che il percorso sia corretto
+const ambienceWS = new Audio('../audio/ambienceWS.mp3'); // Assicurati che il percorso sia corretto
+const bassWS = new Audio('../audio/bassWS.mp3');         // Assicurati che il percorso sia corretto
+const arpWS = new Audio('../audio/arpWS.mp3');           // Assicurati che il percorso sia corretto
 
+
+window.addEventListener('click', () => {
+    if (audioCtx.state === 'suspended') {
+      audioCtx.resume().then(() => console.log('AudioContext ripreso'));
+    }
+    // play del <audio id="background-audio">
+    const bg = document.getElementById('background-audio');
+    if (bg) bg.play().catch(err => console.error('background-audio play:', err));
+    // avvio ambience, bass e arp
+    ambienceWS.play().catch(err => console.error('ambienceWS play:', err));
+    bassWS.play().catch(err => console.error('bassWS play:', err));
+    arpWS.play().catch(err => console.error('arpWS play:', err));
+  }, { once: true })
+  
 // Imposta loop e volumi iniziali
 ambienceWS.loop = true;
 ambienceWS.volume = 0; // Inizialmente 0, sarà impostato tramite fadeIn
